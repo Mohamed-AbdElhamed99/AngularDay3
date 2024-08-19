@@ -1,0 +1,18 @@
+<div class="card my-3">
+    <img src="{{product.image}}" class="card-img-top" alt="..." height="280">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <p class="card-text">${{product.price}}
+          @if(oldPrice != 0){
+            <span class="text-danger"><del>{{oldPrice|currency}}</del></span>
+          }
+
+      </p>
+     
+       <div class="d-flex justify-content-between">
+        <a class="btn btn-dark" (click)="edit(product.id)">Edit</a>
+        <a  class="btn btn-danger" (click)="delete(product.id)">Delete</a>
+       </div>
+    </div>
+  </div>
